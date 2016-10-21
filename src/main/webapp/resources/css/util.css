@@ -1,0 +1,632 @@
+/*通用, 比较杂*/
+.Clear {
+    clear: both;
+}
+
+.TDAction {
+    width: 200px;
+}
+
+/*自定义select*/
+select.CustomSelect {
+    width: 230px;
+    height: 40px;
+}
+.customSelect {
+    cursor: pointer;
+}
+
+.customSelect.customSelectHover {
+    /* Styles for when the select box is hovered */
+}
+
+.customSelect.customSelectOpen {
+    /* Styles for when the select box is open */
+}
+
+.customSelect.customSelectFocus {
+    /* Styles for when the select box is in focus */
+}
+
+.customSelect.customSelectDisabledOption {
+    /* Styles for when the selected item is a disabled one */
+}
+
+.customSelect.customSelectDisabled {
+    /* Styles for when the select box itself is disabled */
+}
+
+.customSelectInner {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #c3cace;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    font-size: 14px;
+    color: #4b4b4b;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    padding-right: 30px;
+}
+
+.SearchBox .customSelectInner {
+    height: 30px;
+    line-height: 30px;
+}
+.customSelectInner:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    position: absolute;
+    right: 15px;
+    top: 11px;
+    content: "\f107";
+    font-size: 20px;
+}
+
+.SearchBox .customSelectInner:before {
+    right: 15px;
+    top: 6px;
+}
+
+.SelectWrapper .CustomSelectText {
+    -webkit-appearance: none;
+    border: none;
+    padding-right: 6px;
+    color: #2eabf5;
+    font-size: 14px;
+    cursor: pointer;
+    width: 34px;
+    background: #fff;
+}
+
+.SelectWrapper .customSelectInner {
+    width: 28px!important;
+    height: 40px;
+    padding-left: 0;
+    border: none;
+    color: #2eabf5;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.SelectWrapper .customSelectInner:before {
+    display: none;
+}
+
+.SelectWrapper {
+    line-height: 14px;
+    border-bottom: 1px solid #fff;
+}
+.SelectWrapper:hover {
+    border-bottom: 1px solid #2eabf5!important;
+
+}
+
+/*.customSelectInner:before {*/
+    /*font: normal normal normal 14px/1 FontAwesome;*/
+    /*position: absolute;*/
+    /*right: 20px;*/
+    /*top: 14px;*/
+    /*color: #a6a6a6;*/
+    /*content: "\f107";*/
+/*}*/
+
+.FormRatio {
+    float: left;
+    text-align: left!important;
+    margin-top: 9px;
+    width: 100px!important;
+}
+
+label.ValidateError {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    width: 300px;
+    text-align: left;
+    font-size: 12px;
+    color: #2eabf5;
+    left: 240px;
+}
+
+label#alreadyPay2-error {
+    left: 260px;
+}
+
+label#loanAmountInput-error {
+    left: 335px;
+}
+
+input.ValidateError,
+textarea.ValidateError {
+    border: 1px solid #2eabf5!important;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
+.CheckBoxTD {
+    cursor: pointer;
+}
+
+.SetStatus {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 160px;
+}
+
+.Hidden {
+    display: none;
+}
+
+.SelectWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.SelectWrapper .CustomSelect {
+    width: 50px;
+}
+
+.ListAction {
+    width: 260px;
+}
+
+.FormGroupTitle {
+    vertical-align: middle;
+}
+
+.GroupTable .TableGroupTitle {
+    width: 198px;
+    background: #f6f9fb;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    vertical-align: top;
+    padding-left: 30px;
+    padding-top: 60px;
+    font-size: 16px;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.GroupTable .TableGroupContent {
+    width: 940px;
+    padding-top: 48px;
+    background: #f6f9fb;
+    border-bottom: 2px solid #fff;
+}
+
+.CheckBoxLabel {
+    display: inline-block;
+    width: 158px;
+    font-size: 14px;
+    color: #4b4b4b;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    cursor: pointer;
+}
+
+.PermissionLsit {
+    padding-bottom: 40px;
+    padding-left: 60px;
+}
+
+.PermissionItem {
+    margin-bottom: 40px;
+    float: left;
+}
+
+.ListBtn {
+    margin-right: 6px;
+    color: #2eabf5;
+    font-size: 14px;
+}
+.ListBtn:hover {
+    border-bottom: 1px solid #2eabf5;
+}
+
+.DetailWrapper {
+    padding: 40px 60px;
+    margin-top: 20px;
+    border: 1px solid #e6ebef;
+}
+
+.ShowGroupWrapper {
+    margin-bottom: 60px;
+}
+
+.ShowGroupWrapper .ShowTitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: #4b4b4b;
+    line-height: 16px;
+}
+
+.ShowGroup li {
+    float: left;
+    width: 33.33333%;
+    margin-top: 30px;
+}
+
+.ShowGroupColumn li{
+    width: 33.33333%;
+    margin-top: 30px;
+}
+
+.ShowGroup li label {
+    font-size: 14px;
+    color: #b5bcbf;
+    line-height: 14px;
+}
+
+.ShowGroupColumn li label{
+    font-size: 14px;
+    color: #b5bcbf;
+    line-height: 14px;
+}
+
+.ShowGroup li span {
+    font-size: 14px;
+    color: #666;
+    line-height: 14px;
+}
+
+.ShowGroupColumn li span{
+    font-size: 14px;
+    color: #666;
+    line-height: 14px;
+}
+
+.Unit {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.SetSalePriceDialog .vex-dialog-message {
+    text-align: center;
+    font-size: 16px;
+    color: #322a29;
+}
+
+.SetSalePriceDialog .FormItem {
+    margin-bottom: 10px;
+}
+.SetSalePriceDialog h2 {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    margin: 10px 0 20px 0;
+}
+.SetSalePriceDialog .FormItemControl {
+    float: left;
+}
+.SetSalePriceDialog .FormItem label {
+    margin-right: 10px;
+    float: left;
+    width: 112px;
+}
+.SetSalePriceDialog .FormInput {
+    background-color: #fff!important;
+    border: 1px solid #c3cace!important;
+    border-radius: 0!important;
+    width: 202px!important;
+}
+
+.SetSalePriceDialog .UnitYuan {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.ActionWrapper {
+    padding-left: 20px!important;
+    text-align: left!important;
+    width: 170px;
+}
+
+td .Price {
+    color: #e8563d;
+}
+
+.CarStatusDes {
+    width: 90px!important;
+    text-align: left!important;
+    padding-left: 20px!important;
+}
+
+.CarStatusFirstWarn {
+    color: #f9c359!important;
+}
+
+.CarStatusSecondWarn {
+    color: #a7bd06!important;
+}
+.CarStatusLastWarn {
+    color: #8e44ad!important;
+}
+.ServicePriceWrapper {
+    margin-top: 17px;
+}
+
+.CarInfoWrapper {
+    padding: 22px 15px!important;
+    width: 385px;
+}
+
+.CarInfoWrapper span {
+    margin-right: 7px;
+}
+
+.CarInfoWrapper .CarTitle {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 14px;
+    color: #322a29;
+    line-height: 14px;
+}
+.CarOtherInfoItem {
+    margin-bottom: 10px;
+}
+
+.CarOtherInfoItem:last-child {
+    margin-bottom: 0;
+}
+
+.CarOtherInfo {
+    text-align: left;
+    font-size: 12px;
+    color: #b5bcbf;
+    line-height: 12px;
+}
+
+.CarPriceWrapper {
+    width: 136px;
+    text-align: left!important;
+    padding-left: 20px!important;
+}
+
+.CarImage {
+    float: left;
+    line-height: 0;
+}
+.CarImage img {
+    width: 120px;
+    height: 80px;
+}
+
+.GoodsInfoWrapper {
+    width: 550px;
+}
+
+.GoodInfo {
+    width: 415px!important;
+    float: left;
+    margin-left: 10px;
+}
+
+.SpanInfo {
+    float: left;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    flex: 0 0 auto;
+    color: #4b4b4b;;
+}
+
+#salePriceClone-error,
+#newCarGuidancePriceClone-error,
+#servicePriceClone-error
+{
+     left: 263px !important;
+}
+#carTitle-error {
+    left: 323px!important;
+}
+
+.NotInsuranceQuoteBtnWrapper {
+    display: inline-block;
+}
+
+.NotInsuranceQuoteBtnWrapper select {
+    display: none;
+}
+.FirstSpan {
+    font-size: 14px!important;
+    color: #b5bcbf!important;
+}
+
+.SourceTableItem {
+    cursor: pointer;
+}
+
+.GetCarPhotoNumber {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #4b4b4b;
+}
+
+.GetCarPhotoNumber a {
+    color: #2eabf5;
+}
+
+.ShowRealImage {
+    margin-top: 30px;
+}
+
+.ShowRealImage li {
+    float: left;
+    margin-right: 25px;
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+.ShowRealImage li img {
+    width: 150px;
+    height: 150px;
+}
+
+.CarBrand {
+    width: 100px;
+    height: 100px;
+}
+
+.GetConfigWrapper {
+    display: none;
+}
+
+.GetCarConfigBtn {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.ImageShowListWrapper {
+    width: 100%!important;
+    margin-top: 10px!important;
+}
+
+.ImageShowList {
+    float: left;
+}
+
+.ImageShowListWrapper label {
+    float: left;
+    margin-top: 52px;
+    margin-right: 9px;
+}
+
+.ImageShowList img {
+    margin-top: 10px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.GoodsStepWrapper {
+    display: flex;
+}
+
+.GoodsStep {
+    display: inline-block;
+    flex: 1;
+    margin-right: 6px;
+    /*width: 383px;*/
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #b5bcbf;
+    font-size: 16px;
+    background: #f6f9fb;
+    position: relative;
+}
+
+.GoodsStep:last-child {
+    margin-right: 0;
+}
+
+.GoodsArrow:after {
+    position: absolute;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-left: 22px solid #f6f9fb;
+    border-bottom: 30px solid transparent;
+    right: -21px;
+    z-index: 101;
+}
+
+.GoodsArrow:before {
+    position: absolute;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-left: 22px solid #fff;
+    border-bottom: 30px solid transparent;
+    right: -28px;
+    z-index: 100;
+}
+
+.GoodsStepOn:after {
+    border-left: 22px solid #2eabf5;
+}
+
+.GoodsStepOn {
+    background: #2eabf5;
+    color: #fff;
+}
+
+#IdentifyFormGroup {
+    display: none;
+}
+
+.IdentifyFormGroupHidden {
+    display: table-row!important;
+}
+
+.CarIdentifyStatus {
+    display: inline-block;
+    margin-left: 7px;
+    margin-right: 0!important;
+    width: 55px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background: #2eabf5;
+}
+.simditor-body {
+    width: 621px;
+}
+
+.simditor .simditor-body img, .editor-style img {
+    max-width: 100%;
+}
+
+.CalculateTotalPic {
+    text-align: left;
+}
+
+.InsuranceListData {
+    display: none;
+}
+
+.Center {
+    text-align: center;
+}
+
+.GoodInfoShort {
+    width: 360px;
+    float: left;
+    margin-left: 10px;
+}
+
+.LabelNeedBeforeStyle:before {
+    top: -4px;
+}
+
+.FormItemNoMarginBottom {
+    margin-bottom: 0;
+}
+
+.TDAlignLeft {
+    text-align: left!important;
+}

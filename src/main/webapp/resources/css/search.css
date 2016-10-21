@@ -1,0 +1,208 @@
+/*搜索*/
+.SearchBox {
+    margin-bottom: 10px;
+    background: #f6f9fb;
+    padding: 10px 0 0px 0;
+}
+
+.SearchBox .CustomSelect {
+    width: 160px!important;
+    height: 30px!important;
+    line-height: 30px!important;
+    cursor: pointer;
+}
+
+.SearchBox .customSelectInner:before{
+    cursor: auto;
+}
+
+.DatePickerStart {
+    position: relative;
+}
+
+.DatePickerStart:before {
+    position: absolute;
+    right: -15px;
+    top: 15px;
+    content: " ";
+    width: 10px;
+    height: 1px;
+    background: #989ea1;
+}
+
+.SearchBox .CustomInput,
+.SearchButtonWrapper .CustomInput {
+    height: 28px;
+    line-height: 28px;
+    width: 144px;
+}
+
+.SearchBoxBtn {
+    float: left;
+    /*margin-top: 10px;*/
+    margin-left: 20px;
+}
+.SearchBox label,
+.StatusGroupLabel {
+    float: left;
+    margin-top: 6px;
+    margin-right: 22px;
+    color: #444;
+}
+
+
+.SearchGroup {
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.OtherSearchInfoBorder {
+    border-top: 15px solid #fff;
+    clear: both;
+}
+
+.OtherSearchInfo {
+    height: 40px;
+    clear: both;
+    border: 1px solid #e6ebef;
+}
+
+.SortWrapper {
+    float: left;
+}
+
+.SortList li a {
+    display: inline-block;
+    width: 135px;
+    line-height: 40px;
+    text-align: center;
+    border-right: 1px solid #e6ebef;
+}
+
+.SortList li a span {
+    margin-right: 8px;
+}
+
+.SearchButtonWrapper input {
+    border-right: 1px solid #2eabf5;
+    float: left;
+}
+
+.SearchButtonWrapperMore input {
+    margin-top: 5px;
+}
+
+.SearchButtonWrapper .InputMarginLeft {
+    margin-left: 60px;
+}
+
+.SearchButtonWrapper button {
+    padding: 0;
+    width: 30px;
+}
+.SearchButtonWrapper button .fa-search {
+    margin-top: 8px;
+}
+.fa-search {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("/resources/image/iconSearch.png") center no-repeat;
+}
+
+.SearchButtonWrapperMore button{
+    margin-top: 5px;
+}
+
+.SearchButtonWrapper button {
+    margin-left: 0;
+}
+
+.SortList li {
+    display: inline-block;
+}
+
+.SearchGroup .SearchBoxBtn {
+    margin-left: 0;
+}
+
+.DatePickerWrapper,
+.DateTimePickerWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.DatePickerWrapper input {
+    padding-left: 30px;
+    width: 121px!important;
+}
+
+.DateTimePickerWrapper input {
+    padding-left: 30px;
+    width: 160px!important;
+}
+
+.DatePickerWrapper:after,
+.DateTimePickerWrapper:after {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+    content: " ";
+    width: 16px;
+    height: 16px;
+    background: url("/resources/image/Calendar.png") center no-repeat;
+}
+
+.FormDatePickerWrapper {
+    position: relative;
+}
+
+.FormDatePickerWrapper input {
+    padding-left: 30px!important;
+    width: 191px!important;
+}
+.FormDatePickerWrapper:after {
+    position: absolute;
+    top: 13px;
+    left: 9px;
+    content: " ";
+    width: 16px;
+    height: 16px;
+    background: url("/resources/image/Calendar.png") center no-repeat;
+}
+
+.StatusGroup {
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    margin-left: 0;
+    margin-bottom: 0;
+    border-left: 1px solid #e6ebef;
+    border-right: 1px solid #e6ebef;
+}
+.DealSearchBox {
+    margin-bottom: 0;
+}
+
+.StatusGroup label,
+.StatusGroup .StatusGroupLabel {
+    margin-top: 0!important;
+}
+
+.StatusGroup .StatusGroupLabel {
+    color: #b5bcbf;
+    margin-left: 30px;
+    margin-right: 12px;
+}
+
+.fa-angle-down {
+    transform: rotate(-90deg);
+    display: inline-block;
+}
+
+.fa-angle-down:before {
+    content: "ㄑ";
+    font-size: 10px;
+}

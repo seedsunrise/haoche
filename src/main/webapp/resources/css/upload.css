@@ -1,0 +1,64 @@
+/*上传*/
+.UploadBtnWrapper {
+    position: relative;
+}
+.UploadBtnWrapper input {
+    position: absolute;
+    opacity: 0;
+    width: 124px;
+    height: 40px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.UploadBtnWrapper a {
+    z-index: 99;
+}
+
+.ImagePreShow {
+    max-width: 140px;
+}
+
+.PreShowList .ImagePreShow {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.ImageActionWrapper {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.ImageActionWrapper .DeleteImage {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    content: "-";
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 16px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    background: #ff6c60;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.PreShowList {
+    margin-bottom: 10px;
+}
+
+.ImageInput {
+    position: absolute;
+    opacity: 0;
+}

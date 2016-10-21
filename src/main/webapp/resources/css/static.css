@@ -1,0 +1,184 @@
+.HomeStatisticWrapper {
+    margin-bottom: 50px;
+    border: 1px solid #e6ebef;
+    font-size: 14px;
+    color: #4b4b4b;
+}
+
+.HomeStatisticWrapper h2 {
+    padding-left: 15px;
+    height: 45px;
+    line-height: 45px;
+    background: #f6f9fb;
+    border-bottom: 1px solid #e6ebef;
+}
+
+.HomeStatisticWrapper h2 .StaticMainTitle {
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.HomeStatisticWrapper h2 .StatisticDate {
+    font-size: 14px;
+    color: #b5bcbf;
+}
+
+.HomeStatisticWrapper ul li {
+    box-sizing: border-box;
+    float: left;
+    width: 12.5%;
+    padding: 32px 0;
+    border-right: 1px solid #e6ebef;
+    text-align: center;
+    color: #4b4b4b;
+    font-size: 14px;
+}
+
+.HomeStatisticWrapper ul li:last-child {
+    border: none;
+}
+
+.HomeStatisticWrapper .StaticNum {
+    font-size: 25px;
+    color: #636363;
+}
+.HomeStatisticWrapper .StaticUnit {
+    font-size: 14px;
+    color: #c5c5c5;
+}
+
+.HomeDateWrapper {
+    display: inline-block;
+}
+.HomeDateWrapper .DatePickerWrapper {
+    display: inline-block;
+}
+
+.StaticByDays:first-child {
+    margin-left: 10px;
+}
+
+.StaticByDays {
+    display: inline-block;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    width: 80px;
+    border: 1px solid #e6ebef;
+    text-align: center;
+    color: #c5c5c5;
+    border-radius: 4px;
+}
+
+.OnStaticByDays {
+    color: #fff;
+    background: #2eabf5;
+    border: 1px solid #2eabf5;
+}
+
+.HomeDateWrapper .DatePicker {
+    margin-top: 7px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.HomeDateWrapper .DatePickerWrapper {
+    position: relative;
+}
+
+.HomeDateWrapper .DatePickerWrapper:after {
+    top: 14px;
+}
+.HomeDateWrapper .DatePickerWrapper:before {
+    right: -17px;
+    top: 22px;
+}
+
+.HomeDateWrapper .DatePickerStart {
+    margin-right: 20px;
+}
+
+.HomeStaticForm {
+    display: inline-block;
+}
+
+.ChartWrapper {
+    margin-bottom: 40px;
+    display: none;
+}
+
+.ChartWrapper h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 25px;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.Chart {
+    width: 100%;
+    height: 400px;
+    line-height: 400px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.ChartSearchWrapper {
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.ChartSearchWrapper .SearchButtonWrapper {
+    float: left;
+}
+
+.ChartSearchWrapper .SearchButtonWrapper .CustomInput {
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.ChartSearchWrapper .SearchButtonWrapper button {
+    margin-top: 0;
+}
+.ChartSearchWrapper label {
+    float: left;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #4b4b4b;
+}
+
+.ChartSearchWrapper .DatePickerWrapper {
+    float: left;
+    margin-left: 10px;
+}
+
+.ChartSearchWrapper .DatePicker {
+    height: 28px;
+    line-height: 28px;
+}
+
+.ChartWrapper h3 {
+    display: none;
+    margin-bottom: 20px;
+    text-align: right;
+    padding-right: 300px;
+    font-size: 14px;
+    color: #4b4b4b;
+}
+
+.ChartWrapper h3 label {
+    margin-left: 20px;
+}
+
+.HomeTimeLabel {
+    margin-left: 20px;
+}
+
+.Postscript {
+    display: inline-block;
+    line-height: 30px;
+    margin-left: 10px;
+    color: #ccc;
+    font-size: 14px;
+}

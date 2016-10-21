@@ -1,0 +1,52 @@
+CREATE TABLE `user_service_project` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+	`projectTitle` VARCHAR(40) NOT NULL COMMENT '项目标题',
+	`projectInfo` VARCHAR(100) NULL DEFAULT NULL COMMENT '详细信息',
+	`action` TINYINT(4) NULL DEFAULT '0',
+	`createdAt` DATETIME NULL DEFAULT NULL,
+	`updatedAt` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COMMENT='车主服务预约项目表'
+DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT
+ENGINE=InnoDB
+;
+
+CREATE TABLE `user_service_appointment` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+	`userId` INT(11) NULL DEFAULT NULL COMMENT '客户id',
+	`userName` VARCHAR(20) NULL DEFAULT NULL COMMENT '预约客户姓名',
+	`mobile` VARCHAR(15) NULL DEFAULT NULL COMMENT '预约客户手机号',
+	`appointmentTime` DATETIME NOT NULL COMMENT '预约时间',
+	`appointmentStatus` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '待审核：0 已审核：1 已完成：2',
+	`serviceCharge` INT(11) NULL DEFAULT NULL COMMENT '总服务费',
+	`remarks` VARCHAR(100) NULL DEFAULT NULL COMMENT '预约总备注',
+	`shopId` INT(11) NULL DEFAULT NULL,
+	`image` VARCHAR(255) NULL DEFAULT NULL COMMENT '预约图片备注',
+	`action` TINYINT(4) NULL DEFAULT '0',
+	`createdAt` DATETIME NULL DEFAULT NULL,
+	`updatedAt` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COMMENT='车主预约列表'
+DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT
+ENGINE=InnoDB
+;
+
+CREATE TABLE `user_appointment_project` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+	`appointmentId` INT(11) NOT NULL COMMENT '预约列表ID',
+	`projectId` INT(11) NOT NULL COMMENT '预约项目id',
+	`projectRemarks` VARCHAR(100) NULL DEFAULT NULL COMMENT '预约项目备注',
+	`projectPrice` INT(11) NULL DEFAULT NULL COMMENT '服务价格',
+	`action` TINYINT(4) NULL DEFAULT '0',
+	`createdAt` DATETIME NULL DEFAULT NULL,
+	`updatedAt` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COMMENT='车主预约项目关联表'
+DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT
+ENGINE=InnoDB
+;
+
+ALTER TABLE `user_service_appointment` ADD COLUMN `userRequest` VARCHAR(100) NULL DEFAULT NULL COMMENT '用户需求' AFTER `remarks`;

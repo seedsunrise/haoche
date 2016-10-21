@@ -1,0 +1,128 @@
+/*车辆图片上传*/
+
+.LayoutWrapper {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.MainTitle {
+    height: 100px;
+    line-height: 100px;
+    font-size: 26px;
+    color: #1b1b1b;
+    margin: 0;
+    border-bottom: 2px solid #ff5f52;
+}
+
+.MainWrapper {
+    padding: 0 20px;
+}
+
+.MainTitle span {
+    position: relative;
+    margin-left: 54px;
+}
+
+.SubmitPhotoBtn {
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.PhotoWrapper {
+    width: 100%;
+}
+
+.Action {
+    float: left;
+    width: 350px;
+}
+
+.Container {
+    width: 150px;
+    height: 100px;
+    list-style: none;
+}
+
+.PhotoWrapperTitle {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4b4b4b;
+}
+
+.ActionTitle {
+    margin: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #4b4b4b;
+}
+
+.Container .ImageWrapper {
+    height: 100px!important;
+    position: relative;
+    overflow: hidden;
+}
+
+.UploadBtnWrapper {
+    margin-top: 25px;
+    position: relative;
+}
+
+.UploadBtnWrapper input {
+    position: absolute;
+    opacity: 0;
+    width: 124px;
+    height: 40px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.PreShowList {
+    line-height: 0;
+}
+
+.PhotoWrapper .ImagePreShow {
+    width: 150px;
+    height: 100px;
+}
+
+#CarPhoto .FileUploadWrapper {
+    margin-left: 62px;
+    margin-bottom: 20px;
+}
+
+.ImageGroupWrapper {
+    position: relative;
+    margin-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 62px;
+}
+.Container {
+    position: absolute;
+    cursor: move;
+}
+
+.Container .Delete {
+    position: absolute;
+    constent: "-";
+    right: -10px;
+    top: -10px;
+    content: "-";
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    line-height: 16px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    background: #ff6c60;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.CarPhotoBtn {
+    padding: 0 43px!important;
+}

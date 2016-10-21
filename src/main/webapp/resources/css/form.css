@@ -1,0 +1,115 @@
+/*表单*/
+.FormHorizontal {
+    margin-top: 20px;
+}
+
+.FormHorizontalWidthFull {
+    max-width: 100%;
+}
+
+.FormItem {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    font-size: 12px;
+    margin-bottom: 24px;
+    color: #666;
+}
+
+.FormItem label {
+    width: 160px;
+    margin-right: 17px;
+    font-size: 14px;
+    color: #4b4b4b;
+    text-align: right;
+    vertical-align: middle;
+}
+.FormLayout {
+    position: relative;
+    display: block;
+    float: left;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    flex: 0 0 auto;
+}
+.FormItemControl {
+    padding: 0;
+}
+
+.FormItem .FormInput,
+.CustomInput {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 214px;
+    cursor: text;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4b4b4b;
+    background-color: #fff;
+    border: 1px solid #c3cace;
+    -webkit-transition: border .2s cubic-bezier(0.645, 0.045, 0.355, 1), background .2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: border .2s cubic-bezier(0.645, 0.045, 0.355, 1), background .2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0px 7px;
+    height: 38px;
+    outline: none;
+}
+.FormItem .FormInput:focus,
+.CustomInput:focus {
+    border: 1px solid #2eabf5!important;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.CustomInput {
+    width: 184px;
+}
+
+textarea.FormInput {
+    padding: 10px 7px!important;
+    height: 85px!important;
+}
+
+
+.FormPhotoWrapper {
+    float: left;
+    width: 550px;
+}
+
+.LabelNeedWrapper {
+    font-size: 14px;
+    color: #c5c5c5;
+}
+
+.LabelNeed {
+    position: relative;
+}
+
+.LabelNeed:before {
+    position: absolute;
+    left: -5px;
+    top: 0px;
+    content: "*";
+    color: #ff6c60;
+}
+
+.FormBtnSubmit {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+label#content-error {
+    top: 80px;
+    left: 281px;
+}
+
+.EIR label#contractImage-error {
+    top: 20px;
+    left: 261px;
+}

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+       http://www.springframework.org/schema/rabbit
+       http://www.springframework.org/schema/rabbit/spring-rabbit-1.2.xsd">
+
+    <!--<import resource="classpath:jsp_tag.tld"></import>-->
+
+    <!--<bean-->
+    <!--class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">-->
+    <!--&lt;!&ndash; 日期格式转换 &ndash;&gt;-->
+    <!--<property name="webBindingInitializer">-->
+    <!--<bean class="com.haoche.bos.config.binder.BindConverter" />-->
+    <!--</property>-->
+    <!--</bean>-->
+
+    <bean id="conversionService"
+          class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <!--<bean class="com.haoche.bos.config.binder.StringToLong" />-->
+                <bean class="com.haoche.bos.config.binder.StringToEnumConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService">
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="customObjectMapper"></property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="jedisConnFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="usePool" value="true"/>
+        <property name="hostName" value="${redis.host}"/>
+        <property name="port" value="${redis.port}"/>
+    </bean>
+
+    <bean id="redisTemplate"
+          class="org.springframework.data.redis.core.RedisTemplate"
+          p:connection-factory-ref="jedisConnFactory">
+        <!-- TODO 使用json序列化 -->
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="valueSerializer">
+            <bean id="redisSerializer"
+                  class="org.springframework.data.redis.serializer.StringRedisSerializer">
+            </bean>
+        </property>
+
+        <property name="hashKeySerializer">
+            <bean id="stringRedisSerializer"
+                  class="org.springframework.data.redis.serializer.StringRedisSerializer">
+            </bean>
+        </property>
+        <property name="hashValueSerializer">
+            <bean id="stringRedisSerializer"
+                  class="org.springframework.data.redis.serializer.StringRedisSerializer">
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id='cacheManager'
+          class='org.springframework.data.redis.cache.RedisCacheManager'
+          c:template-ref='redisTemplate'>
+        <property name="expires">
+            <map>
+                <!-- 微信绑定key过期时间 -->
+                <!-- 过期时间单位 s -->
+                <!--<entry key="wxUserBindingKeyCache" value="${redis.wxUserBindingKeyCache.expiredTime}"/>-->
+            </map>
+        </property>
+    </bean>
+
+    <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="jedisConnFactory" />
+    </bean>
+
+    <bean id="empInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/empService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.EmpInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 车源远程接口-->
+    <bean id="carSourceInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carSourceService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarSourceInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 车辆配置远程接口-->
+    <bean id="carConfigInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.basedata.ip}/carConfigService" />
+        <property name="serviceInterface" value="com.basedata.remoting.stub.CarConfigInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 车源操作日志远程接口-->
+    <bean id="carOperationLogInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carOperationLogService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarOperationLogInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 部门远程接口-->
+    <bean id="deptInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/deptService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.DeptInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 城市远程接口-->
+    <bean id="cityInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/cityService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CityInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 门店远程接口-->
+    <bean id="shopInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/shopService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.ShopInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 品牌远程接口-->
+    <bean id="carBrandInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.basedata.ip}/carBrandService" />
+        <property name="serviceInterface" value="com.basedata.remoting.stub.CarBrandInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 生产厂商远程接口-->
+    <bean id="carSubBrandInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.basedata.ip}/carSubBrandService" />
+        <property name="serviceInterface" value="com.basedata.remoting.stub.CarSubBrandInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 车系远程接口-->
+    <bean id="carLineInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.basedata.ip}/carLineService" />
+        <property name="serviceInterface" value="com.basedata.remoting.stub.CarLineInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 车型远程接口-->
+    <bean id="carModelInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.basedata.ip}/carModelService" />
+        <property name="serviceInterface" value="com.basedata.remoting.stub.CarModelInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="permissionsInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/permissionsService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.PermissionsInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="carBusinessInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carBusinessService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarBusinessInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="carGoodsInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carGoodsService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarGoodsInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="insuranceQuoteInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/insuranceQuoteService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.InsuranceQuoteInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="orderCarInfoInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/orderCarInfoService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.OrderCarInfoInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 帮助中心远程接口-->
+    <bean id="helpInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/helpService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.HelpInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="carInfoApplyInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carInfoApplyService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarInfoApplyInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="statisticalInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/statisticalService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.StatisticalInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="carIdentifyInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.identify.ip}/carIdentifyService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarIdentifyInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+    <bean id="businessUserInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.userauth.ip}//businessUserService" />
+        <property name="serviceInterface" value="com.haoche.userauth.remoting.stub.BusinessUserInertface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="insuranceConfigInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/insuranceConfigService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.InsuranceConfigInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="carInsuranceInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carInsuranceService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarInsuranceInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!--车型油耗接口-->
+    <bean id="modelFuelConsumptionInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/modelFuelConsumptionService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.capp.ModelFuelConsumptionInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="carExtraItemInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carExtraItemService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarExtraItemInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!--服务预约项目接口-->
+    <bean id="userServiceProjectInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.carmaintain.ip}/userServiceProjectService" />
+        <property name="serviceInterface" value="com.haoche.carmaintain.remoting.stub.UserServiceProjectInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!--服务预约接口-->
+    <bean id="userServiceAppointmentInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.carmaintain.ip}/userServiceAppointmentService" />
+        <property name="serviceInterface" value="com.haoche.carmaintain.remoting.stub.UserServiceAppointmentInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <bean id="userInfoInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.userauth.ip}/userInfoService" />
+        <property name="serviceInterface" value="com.haoche.userauth.remoting.stub.UserInfoInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!--消息反馈接口-->
+    <bean id="feedBackInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/feedBackService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.FeedBackInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!--贷款信息相关接口-->
+    <bean id="carLoanInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/carLoanService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.CarLoanInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!--APP广告-->
+    <bean id="marketAppBannerInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.core.ip}/marketAppBannerService" />
+        <property name="serviceInterface" value="com.haoche.remoting.stub.capp.MarketAppBannerInterface" />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+
+    <!-- 车主车辆相关远程接口-->
+    <bean id="carInfoInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.carowner.ip}/carInfoService" />
+        <property name="serviceInterface" value="com.haoche.carowner.remoting.stub.CarInfoInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+    <!-- 车主相关远程接口-->
+    <bean id="carOwnerInterface" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <property name="serviceUrl" value="${rmi.carowner.ip}/carOwnerService" />
+        <property name="serviceInterface" value="com.haoche.carowner.remoting.stub.CarOwnerInterface " />
+        <property name="refreshStubOnConnectFailure" value="true" />
+        <property name="lookupStubOnStartup" value="false" />
+    </bean>
+    <!--<mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.qkhc.haoche.bos.web.interceptor.AuthInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+</beans>

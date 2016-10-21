@@ -1,0 +1,282 @@
+/*成交*/
+a { color:#666}
+.hot {color:#e8563d}
+.unHot { color:#b5bcbf;}
+.blue { color:#2eabf5}
+.fb { font-weight: bold}
+.fl {  float: left;}
+.fr {  float:right;}
+.f14 {  font-size: 14px;}
+.f16 {  font-size: 16px;}
+.h2 { font-size: 18px;font-weight: bold}
+.h3 { font-size: 16px;font-weight: bold}
+
+textarea { color:#4b4b4b;font: 13.3333px Arial;resize: none;padding:7px;
+    border: 1px solid #c3cace;
+}
+table .txtBox { float:left;text-align: left;margin:-8px 0 0 10px; line-height: 25px;min-width:200px; }
+
+
+.tb { background-color: #f6f9fb;width:100%;margin-bottom:20px;}
+.tb td {border-left:2px solid #fff;padding:20px;}
+.alignLeft th,
+.alignLeft td { text-align: left}
+
+.spanStyle {line-height: 40px;  vertical-align: middle;font-size: 14px;margin-left:5px;}
+.brdTop { border-top:1px solid #e6ebef;}
+.BtnStyle { width: 100px;margin-left: auto;margin-right: auto;display:block !important}
+.BtnBrd {
+    height: 30px; line-height: 30px; padding: 0px 20px; font-size:14px;
+    background:none;border:1px solid #2eabf5;color:#2eabf5
+}
+/* 成交-订单列表 */
+/*#dealList{ font-size: 14px;}*/
+#dealList .SearchGroup lable {margin-right: 20px; }
+/*#dealList .SortList a {margin-right: 20px;}*/
+
+#dealList #mainBtn{
+    float: left;
+    /* margin-top: 10px; */
+    margin-left: 20px;
+}
+
+#dealList .txtBox{ max-width:300px; }
+#dealList input { vertical-align: middle;}
+#dealList table { margin-bottom: 20px;}
+#dealList table a { color:#2eabf5 }
+#dealList td:first-child{width: 80px;}
+.tb45 td:nth-child(4) ,
+.tb45 td:nth-child(5){text-align: left}
+
+
+#dealList .productImg { width:120px;height: 80px; }
+
+/* 成交-订单详情 */
+
+#dealDetail { line-height: 28px;font-size: 14px; }
+
+#dealDetail .h2,
+#dealDetail .h3{
+    margin-bottom: 15px;}
+#dealDetail .ShowGroupWrapper {
+    font-size:14px;
+    clear:both;
+    overflow: hidden;
+    background-color: #f6f9fb;}
+
+#dealDetail .tb { margin-bottom: 60px; }
+#orderStatus a:hover { color:#2eabf5}
+
+#orderStatus td:first-child{ width: 190px;padding:20px;box-sizing: border-box; }
+#orderStatus td:last-child{
+    float: none;
+    padding:20px;
+    margin-left:190px;
+    border-left:2px solid #fff;
+    overflow: hidden;
+}
+
+#orderStatus .BtnBrd{ display: block;width:60px; margin :12px auto 15px auto; }
+
+#orderStatus .hack { margin-right:20px; }
+
+#orderStatus .curFlow { margin-bottom: 30px; }
+#orderStatus .orderFlow { padding-top: 40px;margin:0 auto;width:770px; }
+
+.orderFlow li {
+    width: 134px;
+    height: 92px;float:left;
+    position: relative;}
+
+.orderFlow li:after {
+    position: absolute;top:25px;left:7px; z-index: 0;
+    content: '';width:130px;height: 0;border:1px solid #b5bcbf;}
+
+.orderFlow li:last-child {margin:0;width:64px;}
+.orderFlow li:last-child:after {display:none;}
+
+.orderFlow i {
+    display: block;margin:0 0 10px 7px;
+    position: relative;z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background:#fff url('../image/orderFlow-n1.png') center center no-repeat;
+}
+
+.orderFlow .n1 i{background-image: url('../image/orderFlow-n1-un.png'); }
+.orderFlow .n2 i{background-image: url('../image/orderFlow-n2-un.png'); }
+.orderFlow .n3 i{background-image: url('../image/orderFlow-n3-un.png'); }
+.orderFlow .n4 i{background-image: url('../image/orderFlow-n4-un.png'); }
+.orderFlow .n5 i{background-image: url('../image/orderFlow-n5-un.png'); }
+.orderFlow .n6 i{background-image: url('../image/orderFlow-n6-un.png'); }
+
+.orderFlow .n1.active  i{background-image: url('../image/orderFlow-n1.png'); }
+.orderFlow .n2.active  i{background-image: url('../image/orderFlow-n2.png'); }
+.orderFlow .n3.active  i{background-image: url('../image/orderFlow-n3.png'); }
+.orderFlow .n4.active  i{background-image: url('../image/orderFlow-n4.png'); }
+.orderFlow .n5.active  i{background-image: url('../image/orderFlow-n5.png'); }
+.orderFlow .n6.active  i{background-image: url('../image/orderFlow-n6.png'); }
+
+.orderFlow .active:after { border-color:#2eabf5}
+
+.orderFlow .h3{
+    width: 64px;
+    text-align: center;display: block;
+}
+.orderFlow .active .h3 { color:#2eabf5}
+.orderFlow .unHot {
+    display: block;
+    width: 100px;
+    text-align: center;
+    line-height: 20px;
+    position:absolute;top:-25px;left:48px;z-index: 2;}
+.orderFlow .hack2{
+    top:-35px;
+}
+#orderInfo{
+    clear: both;overflow:hidden;
+}
+#orderInfo li {
+    float:left;
+    width: 33%;
+    padding: 20px;
+    border-right:2px solid #fff;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+#orderInfo li:last-child{border:none}
+
+#productInfo {
+    padding:20px;
+}
+#productInfo th {background-color: #fff; }
+#productInfo td{background-color: #fff;}
+
+/* 订单轨迹*/
+#orderTrack {
+    padding: 20px;}
+#orderTrack li { clear: both;overflow: hidden;position: relative}
+#orderTrack li:last-child:after{ border:none;}
+#orderTrack .time {
+    height:18px;line-height: 18px;
+    background:#f6f9fb url('../image/icon-orderTrack.png') 0px 0px no-repeat;padding-left:30px;}
+#orderTrack .time span{ display: inline-block;padding-top: 4px;}
+#orderTrack li:first-child .time {
+    background:#f6f9fb url('../image/icon-orderTrack2.png')  0px 0px no-repeat;}
+#orderTrack li:first-child .time span {
+    padding-top: 0;}
+#orderTrack .cont {
+    clear: both;overflow: hidden;
+    border-left:2px solid #2eabf5;margin-left:8px;
+    padding: 10px 10px 0 22px;}
+#orderTrack .cont p {
+    padding-bottom: 10px;}
+#orderTrack li:last-child .cont{border:none;}
+#orderTrack .fl { margin-right:20px;}
+#orderTrack lable { float: left}
+#orderTrack .txt { display: inline-block;width:250px;word-wrap:break-word;}
+#orderTrack .opr {
+    float:none;  margin-left: 30px; font-weight: bold}
+#orderTrack .remarkImg{max-width: 120px;}
+
+/* 弹窗 订单跟进 */
+
+.windowBg{ display:none;width:100%; height:100%;position:fixed; top:0; left:0; z-index:90; cursor:pointer;
+    background:#000; _background:none;opacity: 0.5;-moz-opacity:0.5; filter:alpha(opacity=50); 		}
+
+.alertBox 	{
+    overflow-y:auto;font-size: 14px;
+    z-index:99;
+    width: 877px!important;
+}
+
+/* 订单跟进*/
+
+.ordFU { padding-bottom:40px;margin:0 auto;background-color: #fff;}
+
+.ordFU .title { padding: 20px 26px 30px 26px; clear: both;overflow: hidden;border-radius: 5px; background-color: #f3fafe !important;}
+.ordFU .h3 {margin: 10px 0; text-align: center;
+    position: relative; }
+.ordFU .h3 .close{
+    position: absolute;top:0;right:0;display: block;width: 24px;height:24px;color:#2eabf5;cursor: pointer;font-size: 20px;line-height: 24px;}
+
+.ordFU .orderFlow { margin:0 auto;width:364px;}
+.ordFU .orderFlow .unHot { bottom:40px;left:50%;margin-left:-18px;top:auto;}
+.ordFU .orderFlowHack .unHot { width:200px;text-align:center;margin-left: 80px;left:0; }
+.ordFU .orderFlowHack ,
+.ordFU .tableHack { display: none;}
+.ordFU .orderFlow li { width: 300px;font-size:14px; }
+.ordFU .orderFlow li:last-child {width:64px}
+.ordFU .orderFlow li:after { width:300px; top:76px;left:12px; }
+.ordFU .paySelect { width: 500px;margin:10px auto;}
+.ordFU .paySelect input {margin-top:-2px;vertical-align: middle}
+.ordFU .paySelect lable {margin-right: 20px;}
+
+.ordFU .cont { padding: 20px 26px; }
+.ordFU .followBottom  { padding: 0px 26px; }
+.ordFU table {margin-bottom: 20px;}
+.ordFU .tbStyle {border-top:1px solid #e6ebef}
+.ordFU .tbStyle td{ padding-left:20px;text-align: left ;}
+.ordFU .tbStyle td:last-child {text-align: center;padding:13px 8px}
+.ordFU .tbStyle textarea {margin:0 20px 0 12px;}
+.ordFU .tbStyle .FormItem {margin-bottom:0}
+.ordFU .tbStyle a { color: #fff !important;}
+.ordFU .tbStyle td:first-child{width:120px;}
+.ordFU .tbStyle .dangerWrap {
+    position: relative;}
+.ordFU .dangerWrap span {
+    display: block;width:100%;text-align: right;height:100%;
+    position:absolute;left:-110%;top:50%;margin-top: -16px;
+}
+
+/* 订单编辑 */
+
+#dealEdit .spanStyle input { vertical-align: middle;margin:-2px 5px 0 0;}
+#dealEdit .spanStyle2 { margin: 0 20px 0 0 !important;}
+
+.StatusGroup label {
+    cursor: pointer;
+}
+
+#UpdateLoanAmountInput {
+    color: #2eabf5!important;
+    font-size: 12px;
+    top: 12px;
+    position: absolute;
+    left: 256px;
+    width: 75px;
+}
+
+.NoPriceStyle .Price {
+    color: #4b4b4b;
+}
+
+.NoPriceStyle .DialogOnInsuranceQuote .BtnGroup {
+    margin-top: 30px!important;
+}
+
+.MainStatus {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.SubStatus {
+    font-size: 12px;
+    color: #e8563d;
+}
+
+.StatusAboutToExpire {
+    color: #e8563d;
+}
+
+.StatusExpired {
+    color: #f9c359;
+}
+.StatusAlreadyInsurance {
+    color: #a7bd06;
+}
+
+.RenewalDialogWrapper .ChoseInsurance {
+    display: none;
+}

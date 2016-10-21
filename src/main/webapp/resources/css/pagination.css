@@ -1,0 +1,187 @@
+/*分页*/
+.Pagination {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.PaginationItem {
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    list-style: none;
+    /*float: left;*/
+    display: inline-block;
+    background-color: #fff;
+    font-size: 14px;
+    padding: 0;
+}
+.PageNumber {
+    display: inline-block;
+    padding: 0 12px;
+}
+
+.PaginationItem a {
+    color: #2eabf5;
+    padding: 0 12px;
+}
+
+.PaginationPrev a {
+    padding: 0;
+}
+
+.PaginationNext a {
+    padding: 0;
+}
+
+.PageTotal {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    list-style: none;
+    float: left;
+    background-color: #fff;
+    margin-right: 15px;
+    color: #b5bcbf;
+    font-size: 14px;
+}
+
+.PageNow, .PageNowGO{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    list-style: none;
+    /*float: left;*/
+    display: inline-block;
+    background-color: #fff;
+    margin-right: 15px;
+    color: #b5bcbf;
+    font-size: 14px;
+}
+
+.PageNowGO{
+    border: 1px solid #c3cace;
+    margin-right: 0;
+}
+
+.PageNowGO a{
+    color: #b5bcbf;
+    padding: 0;
+}
+
+.PageNow {
+    margin-left: 40px;
+}
+
+.PaginationItem:hover {
+    opacity: 0.8;
+}
+
+.PaginationPrev,
+.PaginationNext,
+.PaginationJumpPrev,
+.PaginationJumpNext {
+    font-family: Arial;
+    /*float: left;*/
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 4px;
+    background: #2eabf5;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    list-style: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+    color: #fff;
+}
+
+.PaginationPrev {
+    /*margin-left: 110px;*/
+    margin-right: 8px;
+}
+
+.PaginationNext {
+    margin-left: 8px;
+}
+
+.PaginationPrev a,
+.PaginationNext a,
+.PaginationJumpPrev a,
+.PaginationJumpNext a{
+    color: #fff;
+}
+
+.PaginationActive {
+    /*padding: 0 12px;*/
+    background-color: #2eabf5;
+}
+
+.PaginationPrev .fa {
+    font-size: 20px;
+    float: left;
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+.PaginationNext .fa {
+    font-size: 20px;
+    float: right;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.fa-angle-left:before {
+    content: "ㄑ";
+    font-size: 10px;
+}
+.fa-angle-right {
+    transform: rotate(180deg);
+    display: inline-block;
+}
+.fa-angle-right:before {
+    content: "ㄑ";
+    font-size: 10px;
+    transform: rotate(180deg);
+}
+
+.PaginationActive a {
+    color: #fff;
+}
+
+.PaginationDisabled a {
+    cursor: not-allowed;
+}
+
+.PageInput {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 28px;
+    cursor: text;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #c3cace;
+    background-color: #fff;
+    border: 1px solid #c3cace;
+    border-radius: 4px;
+    -webkit-transition: border .2s cubic-bezier(0.645, 0.045, 0.355, 1), background .2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: border .2s cubic-bezier(0.645, 0.045, 0.355, 1), background .2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    margin: 0 8px;
+    width: 32px;
+    text-align: center;
+}

@@ -1,0 +1,84 @@
+/*首页文档显示*/
+
+.ArticleWrapper {
+    margin-left: 20px;
+    border-top: 0;
+    border-right: 0;
+}
+
+.ArticleWrapper .LevelList {
+    height: 41px;
+    line-height: 40px;
+    border-bottom: 1px solid #e6ebef;
+    border-left: 1px solid #e6ebef;
+}
+
+.ArticleWrapper .LevelList li {
+    margin: 0;
+    font-size: 24px;
+    float: left;
+    padding: 0 40px;
+    line-height: 40px;
+    border-right: 1px solid #e6ebef;
+    border-bottom: 1px solid #e6ebef;
+    border-top: 1px solid #e6ebef;
+    background: #f6f9fb;
+}
+
+.ArticleWrapper .LevelList li a {
+    color: #b5bcbf;
+}
+
+.ArticleWrapper .LevelList li.OnSecondLevel {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.ArticleWrapper .LevelList li.OnSecondLevel a {
+    color: #4b4b4b;
+}
+
+.ArticleList {
+    border-right: 1px solid #e6ebef;
+    border-left: 1px solid #e6ebef;
+    border-bottom: 1px solid #e6ebef;
+    text-align: left;
+    padding: 40px 60px 0 60px;
+}
+
+.ArticleList li {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.ArticleList a {
+    position: relative;
+    padding-left: 12px;
+    font-size: 14px;
+    color: #666;
+}
+
+.ArticleList li a:before {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    content: " ";
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #666;
+}
+
+.ArticleList a:hover {
+    border-bottom: 1px solid #666;
+}
+.ArticleContentWrapper {
+    border: 1px solid #e6ebef;
+    padding: 30px;
+}
+
+.ArticleTitle {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4b4b4b;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:s="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:authentication-manager id="authenticationManager">
+        <security:authentication-provider
+                ref="customAuthenticationProvider">
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <!--
+    auto-config="true"   等价于
+    form-login  自动生成登陆页面
+    http-basic logout
+    -->
+
+    <security:http realm="Protected API" use-expressions="true" create-session="always"
+                   authentication-manager-ref="authenticationManager" entry-point-ref="unauthorizedEntryPoint">
+
+
+        <!-- TODO session-fixation-protection session固化配置 -->
+        <!-- 了解详情 http://blog.sina.com.cn/s/blog_a5f093b40101ecod.html -->
+
+        <!--<security:logout invalidate-session="true"-->
+        <!--logout-url="/mobile/session/destroy"-->
+        <!--logout-success-url="/mobile/session/afterSuccessLogout"/>-->
+
+        <!--<security:logout invalidate-session="true" success-handler-ref="customLogoutSuccessHandler"-->
+        <!--logout-url="/mobile/session/destroy" />-->
+
+        <!--
+            +++++++++++++++++++
+            APP接口路由限制
+            +++++++++++++++++++
+         -->
+        <security:csrf disabled="true"></security:csrf>
+
+        <security:intercept-url method="GET"
+                                pattern="/emp/list" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/permissions/*" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/system/**" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/carGoods/*" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/carInsurance/getInsuranceQuoteTpl" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/carInsurance/noticeQuote" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/carInsurance/getInsuranceQuote" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/carSource/*" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/dept/*" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/print/*" access="isAuthenticated()"/>
+        <security:intercept-url method="GET"
+                                pattern="/deal/*" access="isAuthenticated()"/>
+        <security:csrf request-matcher-ref="csrfSecurityRequestMatcher"/>
+    </security:http>
+
+    <bean id="csrfSecurityRequestMatcher" class="com.haoche.bos.util.CsrfSecurityRequestMatcher">
+        <property name="execludeUrls">
+            <list>
+                <value>/deal/</value>
+            </list>
+        </property>
+    </bean>
+</beans>

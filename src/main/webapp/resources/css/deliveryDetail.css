@@ -1,0 +1,72 @@
+.BtnOutline {
+    padding: 0 10px;
+    font-size: 14px;
+    display: inline-block;
+    border: 1px solid #2eabf5;
+    color: #2eabf5;
+}
+
+.BtnOutline:hover {
+    background: #2eabf5;
+    color: #fff;
+}
+
+.DialogMaintainForm {
+    padding: 0 20px;
+}
+
+.MaintainPrice {
+    margin-top: 3px;
+}
+
+.MaintainLabel {
+    float: left;
+}
+
+.MaintainCheckItemList {
+    float: left;
+    max-width: 270px;
+}
+
+.MaintainCheckItemList label {
+    display: inline-block;
+    margin-top: 10px;
+    width: auto!important;
+    cursor: pointer;
+}
+
+.BtnCenterWrapper {
+    text-align: center;
+}
+.BtnCenterWrapper .Btn {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+input.ReadOnly {
+    border: 1px solid #fff!important;
+}
+
+.MaintainTD p {
+    margin-bottom: 5px;
+}
+
+.MaintainTD .BtnOutline {
+    margin-left: 10px;
+}
+
+.FirstTrBorderTop tr:first-child td{
+    border-top: 1px solid #e6ebef;
+}
+
+.BtnWrapperMargin {
+    margin-top: 20px;
+}
+
+.CheckIsChose {
+    width: 63px;
+}
+
+.DatePickerStyle:after {
+    top: 12px!important;
+}

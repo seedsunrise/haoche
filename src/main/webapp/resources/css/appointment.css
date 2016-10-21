@@ -1,0 +1,43 @@
+.Preloading {
+    text-align: center;
+    margin: 30px 0;
+}
+.AppointmentDataWrapper {
+    padding-top: 20px;
+}
+
+.OverAppointmentTableWrapper {
+    box-sizing: border-box;
+    padding: 15px 26px;
+}
+.OverAppointmentTableWrapper th:last-child {
+    border-right: 1px solid #e6ebef;
+}
+
+.OverAppointmentTable {
+    box-sizing: border-box;
+    width: 100%;
+}
+.OverAppointmentTitle {
+    color: #4b4b4b;
+    font-size: 14px;
+    padding-left: 26px;
+}
+.NoPadding {
+    padding: 0!important;
+}
+
+.AppointmentProjectPrice {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+}
+.BorderTop {
+    border-top: 1px solid #e6ebef;
+}
+
+.ProjectRemarksWrapper{
+    padding: 20px 26px;
+}
+

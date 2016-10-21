@@ -1,0 +1,411 @@
+/*弹窗*/
+.OverLay {
+    display: none;
+    position: fixed;
+    background: rgba(44, 62, 80, 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 160px;
+    padding-bottom: 160px;
+    overflow: scroll;
+}
+
+.OverLay .Dialog {
+    width: 500px;
+    margin: 0 auto;
+    min-height: 378px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.OverLay .DialogTitle {
+    position: relative;
+    height: 60px;
+    background: #f3fafe;
+    border-radius: 4px;
+}
+
+.DialogClose {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 55px;
+}
+.InsuranceQuoteStatusWrapper {
+    position: relative;
+    height: 75px;
+    line-height: 75px;
+    width: 305px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #b5bcbf;
+    text-align: center;
+}
+
+.InsuranceQuoteStatusOn {
+    color: #2eabf5;
+}
+
+.InsuranceQuoteStatusStart {
+    float: left;
+}
+
+.InsuranceQuoteStatusEnd {
+    float: right;
+}
+
+.StatusBorder {
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    width: 266px;
+    height: 2px;
+    background: #2eabf5;
+}
+
+.StatusBorderStart {
+    position: absolute;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    background: #2eabf5;
+    transform: rotate(45deg);
+}
+
+.StatusBorderMiddle {
+    position: absolute;
+    top: -3px;
+    left: 128px;
+    width: 8px;
+    height: 8px;
+    background: #2eabf5;
+    transform: rotate(45deg);
+}
+
+.StatusBorderMiddle:before {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    content: " ";
+    width: 4px;
+    height: 4px;
+    background: #fff;
+}
+
+.StatusBorderEnd {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background: #2eabf5;
+    transform: rotate(45deg);
+}
+
+.StatusBorderEnd:before {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    content: " ";
+    width: 4px;
+    height: 4px;
+    background: #fff;
+}
+
+.StatusBorderOn {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #2eabf5;
+    transform: rotate(45deg);
+}
+
+.StatusBorderOn:before {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    content: " ";
+    width: 4px;
+    height: 4px;
+    background: #fff;
+}
+
+.DialogHasInsuranceQuote .StatusBorderOn {
+    left: 255px;
+}
+
+.DialogOnInsuranceQuote .StatusBorderOn {
+    left: 125px;
+}
+
+.InsuranceQuoteContentWrapper h2 {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #322a29;
+    font-size: 18px;
+}
+
+.InsuranceQuoteFormGroup {
+    position: relative;
+    margin-left: 50px;
+}
+
+.InsuranceQuoteFormGroup label{
+    margin-right: 20px;
+    font-size: 14px;
+    color: #b5bcbf;
+}
+
+.InsuranceQuoteContentWrapper .BtnGroup {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.InsuranceQuoteContentWrapper .BtnGroup .ListBtn {
+    display: inline-block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+
+.InsuranceQuoteContentWrapper .Btn {
+    padding: 0 20px;
+    border: 1px solid #2eabf5;
+    font-size: 16px;
+}
+.SubmitInsuranceQuote {
+    margin-right: 17px;
+}
+
+.TextCenter {
+    margin-left: 0;
+    text-align: center;
+}
+.TextCenter span {
+    color: #666;
+}
+
+.DialogHasInsuranceQuote .Dialog {
+    width: 730px;
+}
+
+.InsuranceQuoteFromContent label {
+    font-size: 14px;
+    color: #b5bcbf;
+}
+
+.InsuranceQuoteFromContent h3 {
+    font-size: 18px;
+    color: #4b4b4b;
+    text-align: center;
+}
+
+.InsuranceQuoteFromContent .InsuranceQuoteFormGroup {
+    margin-left: 0;
+}
+
+.InsuranceQuoteFormGroupTitle {
+    margin-top: 28px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #666;
+}
+
+.InsuranceQuoteFormGroupTitle span:first-child {
+    margin-left: 245px;
+}
+
+.InsuranceQuoteFormGroupTitle span:nth-child(2) {
+    margin-left: 115px;
+}
+
+.InsuranceQuoteFormGroupTitle span:last-child {
+    margin-left: 100px;
+}
+
+.InsuranceQuoteFormGroup label {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    min-width: 70px;
+    text-align: right;
+}
+
+.InsuranceQuoteFormGroup label.FirstLabel {
+    width: 205px;
+    text-align: right;
+}
+
+.InsuranceQuoteFromContent .InsuranceQuoteItemShow {
+    float: left;
+    width: 100px;
+    padding-left: 20px;
+    margin-right: 45px;
+    font-size: 14px;
+    color: #b5bcbf;
+    margin-top: 10px;
+}
+
+.InsuranceQuoteFormGroup {
+    margin-bottom: 15px;
+}
+
+.InsuranceQuoteFromContent input[type=text] {
+    float: left;
+    margin-right: 45px;
+    width: 91px;
+    padding-left: 20px;
+    height: 38px;
+    line-height: 38px;
+}
+
+.InsuranceQuoterInfo {
+    text-align: center;
+}
+
+.DialogHasInsuranceQuote .Dialog {
+    padding-bottom: 60px;
+    margin-bottom: 40px;
+}
+
+.InsuranceQuoteItemShowTotal {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #4b4b4b;
+    text-align: center;
+}
+
+.DialogHasInsuranceQuote .Dialog .BtnGroup {
+    text-align: center;
+    margin-left: 0;
+}
+
+input:read-only {
+    border: 1px solid #fff;
+
+}
+
+.InsuranceQuoteFormGroup .CustomInput:read-only:focus:active {
+    border: 1px solid #fff!important;
+}
+
+.Waiting {
+    text-align: center;
+}
+
+.Disabled {
+    background: #bdc3c7!important;
+    border: 1px solid #bdc3c7!important;
+}
+
+.DialogNotInsuranceQuote .InsuranceQuoteFormGroup .chosen-container {
+    width: 230px!important;
+}
+
+.InsuranceListWrapper {
+    padding: 15px;
+}
+
+.InsuranceListWrapper li {
+    float: left;
+    width: 120px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.InsuranceListWrapper li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.InsuranceListWrapper li div {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.InsuranceListWrapper li .InsuranceCompany {
+    font-size: 14px;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.CompulsoryInsuranceTitle {
+    margin-top: 57px;
+    margin-bottom: 25px;
+}
+
+.DeductibleCheck {
+    position: absolute;
+    z-index: 100;
+    top: 12px;
+    left: 542px;
+}
+
+.DeductibleCheckEdit {
+    left: 520px;
+}
+
+.InsuranceQuoteFormGroupData {
+    display: inline-block;
+}
+
+.OverLay .PayInsuranceDialog {
+    width: 877px;
+}
+
+.OverLay .PayInsuranceDialog  .PayInsuranceInfoWrapper {
+    padding: 20px 26px;
+}
+
+.OverLay .PayInsuranceDialog  .PayInsuranceInfoWrapper .Table {
+    margin-bottom: 20px;
+}
+
+.PayInsuranceTitle {
+    text-align: center;
+    color: #322a29;
+    font-size: 18px;
+}
+.FormTable {
+    border-top: 1px solid #e6ebef;
+}
+
+.PayInsuranceDialog .DatePickerWrapper:after {
+    top: 12px;
+}
+
+.DialogTitle h1 {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.OverLay .BigDialog {
+    width: 870px;
+    padding-bottom: 20px;
+}
+
+.DialogPadding {
+    padding:  0 20px;
+}
+
+.MarginTop40 {
+    margin-top: 40px;
+}
+
+.MarginTop20 {
+    margin-top: 20px;
+}
